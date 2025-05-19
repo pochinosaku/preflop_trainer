@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Preflop Trainer</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="header">
+        <h1 style="padding-left: 3%;">Poker Preflop Trainer</h1>
+    </div>
+
+    <div class="main-content">
+        <div id="left-pane" class="left-pane" style="width: calc(30% - 7px)">
+
+            <div id="aim-container" style="padding: 0 3%;">
+                <h2 id="aim">Open raise レンジの練習</h2>
+                <p class="explanation">Preflop のレンジを覚えて、周りの人間をクラッシュしよう！</p>
+                <h3>Open raise レンジの原則</h3>
+                <p class="explanation">Preflop で他のプレイヤーが raise していない状態で最初に raise することを、<strong>open raise</strong> もしくは単に <strong>open する</strong> 
+                    と呼びます。</p>
+                <p class="explanation">Open raise レンジは、自分の後ろに座っているプレイヤーの人数によって決まります。
+                    自分の後ろに多くのプレイヤーがいるほど、参加するハンドは絞る必要があります。</p>
+                <div id="seats-image-container">
+                    <h3>ポジションの名前の一覧</h3>
+                    <p>9人卓の場合、preflop でアクションをする順に、UTG, UTG+1, UTG+2, LJ, HJ, CO, BTN, SB, BB と呼ばれます。</p>
+
+                    <img src="images/seats_name.png" alt="seats" width="100%">
+                    <ul>
+                        <li>UTG: Under the Gun (アンダーザガン)</li>
+                        <li>UTG+1: Under the Gun+1 (プラス1)</li>
+                        <li>UTG+2: Under the Gun+2 (プラス2)</li>
+                        <li>LJ: Low Jack (ロージャック)</li>
+                        <li>HJ: High Jack (ハイジャック)</li>
+                        <li>CO: Cut Off (カットオフ)</li>
+                        <li>BTN: Button (ボタン)</li>
+                        <li>SB: Small Blind (スモールブラインド)</li>
+                        <li>BB: Big Blind (ビッグブラインド)</li>
+                    </ul>
+                </div>
+                <p class="explanation detailExplanation">この Trainer は、<a
+                        href="https://app.gtowizard.com/solutions?solution_type=gwiz&gmfs_solution_tab=ai_sols&gametype=Cash9m50zGeneral&depth=100&gmfft_sort_key=0&gmfft_sort_order=desc&history_spot=0&preflop_actions=">GTO
+                        Wizard Cash, 9max, 100bb, General, NL50, open:
+                        2.5x, 3b: GTO</a>
+                    のソリューションをもとに作成されています。 </p>
+            </div>
+
+        </div>
+
+        <div id="gutter" class="gutter" style="width: 14px; height: 100%;"></div>
+
+        <div id="right-pane" class="right-pane" style="width: calc(70% - 7px);">
+
+            <div class="question">
+                <p style="text-align: right;">現在 <strong><span id="successive-correct-answer"></span> 問</strong>連続正解中！(累計正解数：<span id="correct-num"></span>/<span id="question-num"></span>問中)</p>
+                <p>このハンドは open raise できますか？</p>
+                <p>あなたのポジション：<strong><span id="position"></span></strong> （<span
+                        id="restPlayersNum"></span>人のプレイヤーが後ろにいます）</p> <!-- ここにプレイヤーのポジションが表示される。 -->
+                <p><span id=""></span></p>
+            </div>
+
+            <div id="hero-hand-container">
+                <img id="image1" src="" alt="ランダムなカード1枚目" width="100">
+                <img id="image2" src="" alt="ランダムなカード2枚目" width="100">
+            </div>
+
+            <div id="actionButton-container">
+                <button id="foldButton" class="actionButton">Fold (F)</button>
+                <button id="callButton" class="actionButton">Call (C)</button>
+                <button id="raiseButton" class="actionButton">Raise (R)</button>
+            </div>
+
+            <!-- 解答が入力されてから表示 -->
+            <div id="answer-container" class="question"></div>
+            <div id="frequency-container" class="question"></div>
+            <div id="nextButton-container">
+                <button id="nextButton" class="nextButton">Next Hand (⏎)</button>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
