@@ -1,4 +1,4 @@
-
+## 使い方
 ### cards ディレクトリを以下のリンクからダウンロードし、images 内に置く
 https://drive.google.com/drive/folders/1CTSVQn3rKETiUgUAjNShIQ53Ot2MaB3r?usp=drive_link
 
