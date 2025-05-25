@@ -82,6 +82,29 @@
     margin: 3em auto ;
 }
 
+.hero-card-container {
+    position: relative;
+    width: 100px; /* カードの幅 */
+    height: 145px;
+    /* background-color: magenta; */
+}
+
+.overlay-image, .base-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.base-image {
+    z-index: 1;
+}
+
+.overlay-image {
+    z-index: 2;
+}
+
 #nextButton-container {
     display: flex;
     justify-content: center;
