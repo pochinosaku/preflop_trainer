@@ -188,8 +188,8 @@ async function printAnswer(position, hand, action) {
 function clearAnswer() {
     document.getElementById("answer-container").textContent = "";
     document.getElementById("frequency-container").textContent = "";
-    document.getElementById("image1").src = "";         // 画像をクリア(次のハンドが読み込まれるときに、1枚ずつ再更新されてタイムラグが発生するのを防ぐ)
-    document.getElementById("image2").src = "";
+    document.getElementById("image1").src = "images/cards/background";         // 画像をクリア(次のハンドが読み込まれるときに、1枚ずつ再更新されてタイムラグが発生するのを防ぐ)
+    document.getElementById("image2").src = "images/cards/background";
 }
 
 
