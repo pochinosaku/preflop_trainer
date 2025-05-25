@@ -10,7 +10,7 @@
     background: linear-gradient(to right, var(--seekerstart-color), #c9cbca); 
     color: black;
     font-style: italic;
-    position: fixed;
+    position: absolute;
     top: 0%;
     left: 0%;
     width: 100%;

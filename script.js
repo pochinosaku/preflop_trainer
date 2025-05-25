@@ -25,14 +25,13 @@ function pickRandomTwoCards() {
         index2 = Math.floor(Math.random() * deck.length);
     } while (index1 === index2);
 
-    const randomCard1 = deck[index1];
-    const randomCard2 = deck[index2];
-    let handId = "";
-    if (index1 < index2) {
-        handId = `${randomCard1}${randomCard2}`;
-    } else {
-        handId = `${randomCard2}${randomCard1}`;
-    }
+    // 大きいランクのカードが必ず左側に表示されるように
+    const minIndex = Math.min(index1, index2);
+    const maxIndex = Math.max(index1, index2);
+    const randomCard1 = deck[minIndex];
+    const randomCard2 = deck[maxIndex];
+
+    const handId = `${randomCard1}${randomCard2}`; // ハンドIDはカードの組み合わせをそのまま連結したもの
     // console.log("handId: ", handId);
     return [randomCard1, randomCard2, handId];
 }
@@ -197,7 +196,7 @@ async function startNewHand() {
     document.getElementById("question-num").textContent = questionNum;
     document.getElementById("correct-num").textContent = correctAnswerNum;
     heroHand = pickHeroHand();
-    heroPosition = pickRandomPosition("BB", "UTG", "UTG+1");          // BB を除外、UTG, UTG+1 はデータ未取得ゆえ。
+    heroPosition = pickRandomPosition("BB");          // BB を除外
     clearAnswer();
     isAnswered = false;
     console.log("heroHand:", heroHand, "heroPosition:", heroPosition);
