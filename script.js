@@ -188,16 +188,18 @@ async function printAnswer(position, hand, action) {
 function clearAnswer() {
     document.getElementById("answer-container").textContent = "";
     document.getElementById("frequency-container").textContent = "";
+    document.getElementById("image1").src = "";         // 画像をクリア(次のハンドが読み込まれるときに、1枚ずつ再更新されてタイムラグが発生するのを防ぐ)
+    document.getElementById("image2").src = "";
 }
 
 
 async function startNewHand() {
+    clearAnswer();
     document.getElementById("successive-correct-answer").textContent = successiveCorrectNum;
     document.getElementById("question-num").textContent = questionNum;
     document.getElementById("correct-num").textContent = correctAnswerNum;
     heroHand = pickHeroHand();
     heroPosition = pickRandomPosition("BB");          // BB を除外
-    clearAnswer();
     isAnswered = false;
     console.log("heroHand:", heroHand, "heroPosition:", heroPosition);
     console.log("アクション頻度: ", await actionFreqGTO(heroPosition, heroHand));
